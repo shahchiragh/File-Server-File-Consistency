@@ -1,6 +1,6 @@
 Name: Chirag Shah
 
-# Project: File Server File Consistency
+# File Server File Consistency
 
 Programming Language: C# Windows Forms Application
 
@@ -20,14 +20,17 @@ The general procedure is as follows:
 5. Upon receipt of the Invalidation Notice, the clients will Pull the updated file from the server and update their local copy. The copies of the .txt file across the system are now said to be consistent.
 6. The program will repeat this update process, beginning with any individual client, as many times as necessary until the program is killed.
 
-# This program will maintain the consistency of only a single text file and files and files will not be updated concurrently. Further component specifications are as follows:
-Client:
+## This program will maintain the consistency of only a single text file and files and files will not be updated concurrently. Further component specifications are as follows:
+
+## Client:
+
 Each client process will connect to the server over a socket connection and provide a unique user name to be displayed at the server. 
 Upon connecting to the server, the client will automatically Pull any file updates.
 The client will utilize a simple GUI to provide state information about that client. 
 The user will be informed of the state of the client as appropriate, for instance: “Client connected,” “File change detected,” “Invalidation notice received,” et cetera.
 
-Server:
+## Server:
+
 The server will utilize a simple GUI to provide state information about the server, including which clients are presently connected. 
 The server will handle multiple socket connections simultaneously. The server will not identify, or correct, write conflicts.
 The file exchange may be performed using whatever mechanism is most convenient. 
